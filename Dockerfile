@@ -18,7 +18,7 @@ ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64/
 ENV JCC_JDK /usr/lib/jvm/java-11-openjdk-amd64/
 
 RUN cd /tmp/JCC-3.10 && python setup.py install && \
-cd /opt && git clone http://github.com/nighres/nighres && git checkout ${NIGHRES_TAG} && cd /opt/nighres && ./build.sh && cd /opt/nighres && pip install . && \
+cd /opt && git clone http://github.com/nighres/nighres && cd /opt/nighres && git checkout ${NIGHRES_TAG} && ./build.sh && cd /opt/nighres && pip install . && \
 rm -rf /opt/nighres /tmp/JCC-3.10 /tmp/JCC-3.10.tar.gz
 
 ENV PATH /opt/conda/bin:$PATH
